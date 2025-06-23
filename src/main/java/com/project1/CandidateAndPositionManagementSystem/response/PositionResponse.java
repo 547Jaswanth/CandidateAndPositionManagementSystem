@@ -29,5 +29,4 @@ public class PositionResponse {
     public void setPositionName(String positionName) {
         this.positionName = positionName;
     }
-
 }
