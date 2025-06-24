@@ -65,5 +65,9 @@ public class CandidateServiceImpl implements CandidateService {
 
         return candidateRepository.save(candidate);
     }
+    @Override
+    public List<Candidate> getAllCandidates() {
+        return candidateRepository.findAll();
+    }
 }
 

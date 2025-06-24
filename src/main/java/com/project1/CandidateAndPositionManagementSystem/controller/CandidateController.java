@@ -10,6 +10,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.project1.CandidateAndPositionManagementSystem.service.CandidateService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/candidates")
 @RequiredArgsConstructor
@@ -24,5 +26,9 @@ public class CandidateController {
     @PatchMapping("/{id}")
     public ResponseEntity<Candidate> update(@PathVariable Long id, @RequestBody @Valid CandidateUpdateRequest request) {
         return ResponseEntity.ok(candidateService.update(id, request));
+    }
+    @GetMapping("/getAllCandidates")
+    public ResponseEntity<List<Candidate>> getAllCandidates() {
+        return ResponseEntity.ok(candidateService.getAllCandidates());
     }
 }
